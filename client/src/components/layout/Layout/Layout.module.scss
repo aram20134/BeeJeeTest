@@ -1,0 +1,13 @@
+.container {
+
+  header {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+}

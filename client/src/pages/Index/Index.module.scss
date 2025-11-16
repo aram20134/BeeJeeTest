@@ -1,0 +1,28 @@
+.container {
+  max-width: 600px;
+  height: 100%;
+  width: 100%;
+}
+
+.filterContainer {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+
+
+  button {
+    border-radius: 10px;
+  }
+}
+
+.createContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
