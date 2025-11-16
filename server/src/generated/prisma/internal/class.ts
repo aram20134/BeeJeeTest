@@ -35,6 +35,10 @@ const config: runtime.GetPrismaClientConfig = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-3.0.x"
       }
     ],
     "previewFeatures": [
@@ -58,8 +62,8 @@ const config: runtime.GetPrismaClientConfig = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n\n  runtime         = \"nodejs\"\n  previewFeatures = [\"postgresqlExtensions\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Task {\n  id              Int      @id @default(autoincrement())\n  name            String\n  email           String\n  text            String\n  isDone          Boolean  @default(false)\n  isEditedByAdmin Boolean  @default(false)\n  createdAt       DateTime @default(now())\n  updatedAt       DateTime @updatedAt\n}\n\nmodel User {\n  id        Int      @id @default(autoincrement())\n  name      String\n  password  String\n  isAdmin   Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
-  "inlineSchemaHash": "73fb1cffc3a88a04d44148e77f6710d86a40f0e456d64cb6e460ed7f928f20b6",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n\n  runtime         = \"nodejs\"\n  previewFeatures = [\"postgresqlExtensions\"]\n  binaryTargets   = [\"native\", \"debian-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Task {\n  id              Int      @id @default(autoincrement())\n  name            String\n  email           String\n  text            String\n  isDone          Boolean  @default(false)\n  isEditedByAdmin Boolean  @default(false)\n  createdAt       DateTime @default(now())\n  updatedAt       DateTime @updatedAt\n}\n\nmodel User {\n  id        Int      @id @default(autoincrement())\n  name      String\n  password  String\n  isAdmin   Boolean  @default(false)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
+  "inlineSchemaHash": "4f01b288f3b98852104c51f4477b057571a92cec5dcf8975f8768ab997dc369d",
   "copyEngine": true,
   "runtimeDataModel": {
     "models": {},

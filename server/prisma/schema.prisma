@@ -4,6 +4,7 @@ generator client {
 
   runtime         = "nodejs"
   previewFeatures = ["postgresqlExtensions"]
+  binaryTargets   = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
