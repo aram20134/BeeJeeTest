@@ -1,4 +1,4 @@
-import { AuthService } from "../service/Auth.service.js"
+import { AuthService } from "../service/auth.service.js"
 
 export const AuthController = {
   login: async (req, res) => {
